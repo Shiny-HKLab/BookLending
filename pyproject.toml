@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools", "wheel", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "book-lending"
+version = "0.1.0"
+authors = [
+  { name="bebebebebebebebebe", email="printuserselect@gmail.com" },
+]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dynamic = ["dependencies", "optional-dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements/requirements.in"]}
+optional-dependencies = {dev = {file = ["requirements/requirements.dev.in"]}}
+
+[tool.ruff]
+line-length = 88
+exclude = ["venv"]
+
+[tool.ruff.lint]
+ignore = ["E501"]
+
+[tool.black]
+line-length = 88
+
+[tool.mypy]
+ignore_missing_imports = true
+explicit_package_bases = true

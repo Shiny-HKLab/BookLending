@@ -1,0 +1,13 @@
+# 開発ツール
+black  # フォーマッター
+isort  # インポート整列
+mypy  # 型チェック
+flake8  # リンター
+ruff  # Pythonコード分析
+
+# テストツール
+pytest
+pytest-asyncio
+
+# CI/CD 用
+pre-commit

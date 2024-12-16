@@ -1,0 +1,9 @@
+{
+  "files.exclude": {
+    "**/.git": false
+  },
+  "ruff.configuration": "pyproject.toml",
+  "black-formatter.args": [
+    "--config=pyproject.toml"
+  ],
+}
