@@ -1,3 +1,4 @@
 fastapi
 motor  # 非同期MongoDBドライバ
 uvicorn[standard]  # 開発サーバー用
+httpx
