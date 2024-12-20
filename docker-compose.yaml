@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  server:
+    build: .
+    volumes:
+      - '.:/app-service'
+    tty: true
+    stdin_open: true
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+
+volumes:
+  mongo-data:
+    driver: local
